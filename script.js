@@ -21,9 +21,22 @@ for (let i = 0; i < 40; i++) {
 
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.style.background = window.scrollY > 20
-    ? 'rgba(10,10,15,0.95)'
-    : 'rgba(10,10,15,0.8)';
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+const themeToggle = document.getElementById('themeToggle');
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  const isDark = theme === 'dark';
+  themeToggle.querySelector('.icon-moon').style.display = isDark ? 'block' : 'none';
+  themeToggle.querySelector('.icon-sun').style.display  = isDark ? 'none'  : 'block';
+  themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+themeToggle.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
 });
 
 const observer = new IntersectionObserver(
