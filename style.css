@@ -17,6 +17,28 @@
   --radius:    12px;
   --radius-lg: 20px;
   --transition: 0.2s ease;
+  --navbar-bg:         rgba(10,10,15,0.80);
+  --navbar-bg-scrolled:rgba(10,10,15,0.95);
+  --mobile-menu-bg:    rgba(10,10,15,0.97);
+  --grid-line:         rgba(255,255,255,0.025);
+}
+
+[data-theme="light"] {
+  --bg:        #f8f9fc;
+  --bg-2:      #f0f2f8;
+  --surface:   #ffffff;
+  --surface-2: #e8ebf5;
+  --border:    rgba(0,0,0,0.08);
+  --accent:    #6366f1;
+  --accent-2:  #4f52d9;
+  --accent-glow: rgba(99,102,241,0.12);
+  --text:      #0f172a;
+  --text-muted:#334155;
+  --text-dim:  #94a3b8;
+  --navbar-bg:         rgba(248,249,252,0.85);
+  --navbar-bg-scrolled:rgba(248,249,252,0.97);
+  --mobile-menu-bg:    rgba(248,249,252,0.98);
+  --grid-line:         rgba(0,0,0,0.04);
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -46,10 +68,13 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   overflow: visible;
-  background: rgba(10,10,15,0.8);
+  background: var(--navbar-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   transition: background var(--transition);
+}
+#navbar.scrolled {
+  background: var(--navbar-bg-scrolled);
 }
 
 .nav-inner {
@@ -147,8 +172,8 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-shift 24s ease-in-out infinite;
 }
@@ -275,7 +300,7 @@ section { position: relative; }
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -731,6 +756,52 @@ footer {
   .projects-grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* company logos */
+[data-theme="light"] .tl-logo-wrap {
+  background: #1a1a2e;
+  border-color: rgba(0,0,0,0.12);
+}
+[data-theme="light"] .tl-logo-meta {
+  box-shadow: 0 0 12px rgba(0,130,251,0.7), 0 0 28px rgba(0,130,251,0.35);
+}
+[data-theme="light"] .tl-logo-uoft {
+  box-shadow: 0 0 12px rgba(100,140,220,0.65), 0 0 28px rgba(100,140,220,0.3);
+}
+[data-theme="light"] .tl-logo-veeva {
+  box-shadow: 0 0 12px rgba(245,140,15,0.65), 0 0 28px rgba(245,140,15,0.3);
+}
+[data-theme="light"] .tl-logo-careem {
+  box-shadow: 0 0 12px rgba(26,200,160,0.65), 0 0 28px rgba(26,200,160,0.3);
+}
+
+/* nav right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-2);
+  background: var(--accent-glow);
+}
+.theme-toggle svg { display: block; }
+
 /* hamburger button — hidden on desktop */
 .nav-hamburger {
   display: none;
@@ -761,7 +832,7 @@ footer {
   top: 64px;
   left: 0; right: 0;
   z-index: 99;
-  background: rgba(10,10,15,0.97);
+  background: var(--mobile-menu-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.5rem 2rem;
