@@ -663,6 +663,19 @@ section { padding: 100px 2rem; }
   border: 1px solid rgba(99,102,241,0.2);
   border-radius: 4px;
 }
+.project-tag-github {
+  display: flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  transition: color var(--transition), border-color var(--transition);
+}
+.project-tag-github:hover {
+  color: var(--accent-2);
+  border-color: rgba(99,102,241,0.3);
+}
 
 /* contact */
 #contact { background: var(--bg); }
