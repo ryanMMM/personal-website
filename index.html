@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,6 @@
   <meta property="og:url" content="https://ryanmerheby.com/" />
   <meta property="profile:first_name" content="Ryan" />
   <meta property="profile:last_name" content="Merheby" />
-
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Ryan Merheby — Software Engineer" />
   <meta name="twitter:description" content="Software Engineer at Meta. CS grad from the University of Toronto." />
@@ -44,33 +43,28 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>
-    (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
+    (function(){ var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme',t); })();
   </script>
 </head>
 <body>
 
-  <div id="global-bg" aria-hidden="true">
-    <div class="global-grid"></div>
-  </div>
-
-  <!-- nav -->
-  <nav id="navbar">
+  <!-- NAV -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">RM</a>
+      <a href="#hero" class="nav-name">Ryan Merheby</a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="Ryan-Merheby-Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
         </ul>
-        <button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode">
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <a href="Ryan-Merheby-Resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
         <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -83,384 +77,335 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="Ryan-Merheby-Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      <li><a href="Ryan-Merheby-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
     </ul>
   </div>
 
   <main>
-  <section id="hero">
-    <div class="hero-art" aria-hidden="true">
-      <div class="glow-orb orb-1"></div>
-      <div class="glow-orb orb-2"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Ryan Merheby</h1>
-        <h2 class="hero-title">Software Engineer <span class="at">@</span> Meta <span class="at">·</span> AI Infrastructure</h2>
-        <p class="hero-sub">
-          HBSc Computer Science Alumni, University of Toronto
-        </p>
-        <div class="hero-cta">
-          <a href="#experience" class="btn btn-primary">View My Experiences</a>
-          <a href="https://www.linkedin.com/in/ryanmerheby/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hero-eyebrow reveal">Software Engineer @ Meta · AI Infrastructure</p>
+            <h1 class="hero-name">
+              <span class="hero-line reveal">Ryan</span>
+              <span class="hero-line reveal">Merheby.</span>
+            </h1>
+            <hr class="hero-rule reveal" />
+            <div class="hero-cta reveal">
+              <a href="Ryan-Merheby-Resume.pdf" target="_blank" rel="noopener" class="cta-link">View Resume ↗</a>
+              <div class="hero-icons">
+                <a href="mailto:rmerheby03@gmail.com" aria-label="Email" class="hero-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ryanmerheby/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hero-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://github.com/ryanMMM" target="_blank" rel="noopener" aria-label="GitHub" class="hero-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-photo-wrap reveal">
+            <img src="Linkedin%20Photo.jpg" alt="Ryan Merheby" class="hero-photo" />
+          </div>
         </div>
       </div>
-      <div class="hero-photo-side">
-        <img src="Linkedin%20Photo.jpg" alt="Ryan Merheby" class="hero-photo" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="section-art" aria-hidden="true">
-      <div class="section-orb sorb-a"></div>
-      <div class="section-orb sorb-b"></div>
-    </div>
-    <div class="section-inner">
-      <h2 class="section-title"><span class="num">01.</span> About Me</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a <strong>Software Engineer</strong> at <strong>Meta</strong>, returning after previously being an <strong>AI Infrastructure</strong> intern — building model processing pipelines for Instagram &amp; Ads used by ML engineers 15K+ times daily.
-          </p>
-          <p>
-            I graduated with an HBSc in Computer Science from the <strong>University of Toronto</strong> in April 2026, recognised as a Dean's List Scholar and Chancellor's Scholarship recipient.
-          </p>
-          <p>
-            My interests are in AI infrastructure, distributed systems, and full-stack development.
-            Outside of industry, I've conducted <strong>Undergraduate Research</strong> in generative AI and taught software design as a <strong>Teaching Assistant</strong> for CSC207 (Software Design).
-          </p>
-          <ul class="skills-list">
-            <li>Python</li>
-            <li>Java</li>
-            <li>C++</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>Haskell</li>
-            <li>React</li>
-            <li>Django</li>
-            <li>PyTorch</li>
-            <li>Git</li>
-            <li>Groovy</li>
-            <li>HTML / CSS</li>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="reveal">
+              I'm a <strong>Software Engineer</strong> at <strong>Meta</strong>, returning after previously being an <strong>AI Infrastructure</strong> intern — building model processing pipelines for Instagram &amp; Ads used by ML engineers 15K+ times daily.
+            </p>
+            <p class="reveal">
+              I graduated with an HBSc in Computer Science from the <strong>University of Toronto</strong> in April 2026, recognised as a Dean's List Scholar and Chancellor's Scholarship recipient.
+            </p>
+            <p class="reveal">
+              My interests are in AI infrastructure, distributed systems, and full-stack development. Outside of industry, I've conducted <strong>Undergraduate Research</strong> in generative AI and taught software design as a <strong>Teaching Assistant</strong> for CSC207.
+            </p>
+            <ul class="skills-list reveal">
+              <li>Python</li><li>Java</li><li>C++</li><li>JavaScript</li>
+              <li>SQL</li><li>Haskell</li><li>React</li><li>Django</li>
+              <li>PyTorch</li><li>Git</li><li>Groovy</li><li>HTML / CSS</li>
+            </ul>
+          </div>
+          <div class="about-info reveal">
+            <div class="info-item">
+              <span class="info-label">Current Role</span>
+              <span class="info-value">Software Engineer @ Meta</span>
+              <span class="info-sub">Apr 2026 – Present</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Education</span>
+              <span class="info-value">University of Toronto</span>
+              <span class="info-sub">HBSc Computer Science · 2021 – 2026</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Academic Standing</span>
+              <span class="info-value">GPA 3.95 / 4.00</span>
+              <span class="info-sub">Dean's List · Chancellor's Scholarship</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Seattle, WA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+
+        <hr class="exp-divider" />
+
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-meta">
+                <img src="meta_logo.svg" data-base="meta_logo.svg" data-dark="meta_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="exp-role">Software Engineer — AI Infrastructure</h3>
+                <p class="exp-company">Meta <span class="exp-loc">· Bellevue, WA</span></p>
+              </div>
+            </div>
+            <div class="exp-right">
+              <span class="exp-date">Apr 2026 – Present</span>
+              <span class="exp-duration" id="meta-ft-duration"></span>
+            </div>
+          </div>
+        </div>
+        <hr class="exp-divider" />
+
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-uoft">
+                <img src="uoft_logo.svg" data-base="uoft_logo.svg" data-dark="uoft_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="exp-role">Teaching Assistant</h3>
+                <p class="exp-company">University of Toronto <span class="exp-loc">· Toronto, ON</span></p>
+              </div>
+            </div>
+            <div class="exp-right">
+              <span class="exp-date">Sept – Dec 2025</span>
+              <span class="exp-duration">4 mo</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Led weekly software development labs; graded midterms, exams, and projects for CSC207 (Software Design)</li>
           </ul>
-        </div>
-        <div class="about-card">
-          <div class="card-badge">
-            <span class="badge-icon">💼</span>
-            <div>
-              <strong>Software Engineer @ Meta</strong>
-              <span>Apr 2026 – Present</span>
-            </div>
-          </div>
-          <div class="card-badge">
-            <span class="badge-icon">🎓</span>
-            <div>
-              <strong>University of Toronto</strong>
-              <span>HBSc Computer Science · Co-op Internship Program · 2021 – 2026</span>
-            </div>
-          </div>
-          <div class="card-badge">
-            <span class="badge-icon">🏆</span>
-            <div>
-              <strong>GPA 3.95 / 4.00</strong>
-              <span>Dean's List · Chancellor's Scholarship</span>
-            </div>
-          </div>
-          <div class="card-badge">
-            <span class="badge-icon">📍</span>
-            <div>
-              <strong>Seattle, WA</strong>
-            </div>
+          <div class="exp-tags">
+            <span>Java</span><span>Technical Communication</span><span>MVC</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <hr class="exp-divider" />
 
-  <section id="experience">
-    <div class="section-art" aria-hidden="true">
-      <div class="section-orb sorb-c"></div>
-      <div class="section-orb sorb-d"></div>
-    </div>
-    <div class="section-inner">
-      <h2 class="section-title"><span class="num">02.</span> Experience</h2>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot active"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card tl-card-meta">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-meta">
-                  <img class="tl-logo" src="meta_logo.svg" alt="Meta" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Software Engineer — AI Infrastructure</h3>
-                  <p class="tl-company tl-company-meta">Meta <span class="tl-location">· Bellevue, WA, USA</span></p>
-                </div>
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-meta">
+                <img src="meta_logo.svg" data-base="meta_logo.svg" data-dark="meta_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
               </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">Apr 2026 – Present</span>
-                <span class="tl-duration" id="meta-ft-duration"></span>
+              <div>
+                <h3 class="exp-role">Software Engineer Intern — AI Infrastructure</h3>
+                <p class="exp-company">Meta <span class="exp-loc">· Bellevue, WA</span></p>
               </div>
             </div>
+            <div class="exp-right">
+              <span class="exp-date">May – Aug 2025</span>
+              <span class="exp-duration">4 mo</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Used PyTorch to optimize model processing pipelines for Instagram &amp; Ads at scale.</li>
+            <li>Built a multi-stage validation component in the model processing workflow, closing a validation gap that impacted many production models and caused major outages.</li>
+            <li>Extended the project by creating a suite of CLI tools for ad-hoc weight validation of published model snapshots.</li>
+            <li>Implemented distributed chunk processing of weight pruning, decreasing peak memory usage by <strong>14%</strong>.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>PyTorch</span><span>Python</span><span>ML Systems</span><span>Distributed Systems</span><span>CLI Tooling</span>
           </div>
         </div>
+        <hr class="exp-divider" />
 
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-veeva">
+                <img src="veeva_logo.svg" data-base="veeva_logo.svg" data-dark="veeva_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="exp-role">Software Engineer Intern</h3>
+                <p class="exp-company">Veeva Systems <span class="exp-loc">· Toronto, ON</span></p>
+              </div>
+            </div>
+            <div class="exp-right">
+              <span class="exp-date">May 2024 – Apr 2025</span>
+              <span class="exp-duration">1 yr</span>
+            </div>
           </div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-uoft">
-                  <img class="tl-logo" src="uoft_logo.svg" alt="University of Toronto" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Teaching Assistant</h3>
-                  <p class="tl-company">University of Toronto <span class="tl-location">· Toronto, ON, Canada</span></p>
-                </div>
-              </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">Sept 2025 – Dec 2025</span>
-                <span class="tl-duration">4 mo</span>
-              </div>
-            </div>
-            <ul class="tl-bullets">
-              <li>Led weekly software development labs; graded midterms, exams, and projects for CSC207 (Software Design)</li>
-            </ul>
-            <div class="tl-tags">
-              <span>Java</span><span>Technical Communication</span><span>MVC</span>
-            </div>
+          <ul class="exp-bullets">
+            <li>Led development of a Java internal debugging tool allowing secure API calls in customer instances.</li>
+            <li>Added multivalue fields for user info &amp; optimized aggregation calls, reducing user table load times by <strong>~0.2 seconds</strong>.</li>
+            <li>Created new DB tables, service &amp; API for a new revision history feature for medical data processing tasks.</li>
+            <li>Wrote Groovy scripts for Pfizer &amp; Bayer to convert medical data to match regional standards.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Java</span><span>Groovy</span><span>REST APIs</span><span>SQL</span>
           </div>
         </div>
+        <hr class="exp-divider" />
 
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-uoft">
+                <img src="uoft_logo.svg" data-base="uoft_logo.svg" data-dark="uoft_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="exp-role">Student Researcher</h3>
+                <p class="exp-company">University of Toronto <span class="exp-loc">· Toronto, ON</span></p>
+              </div>
+            </div>
+            <div class="exp-right">
+              <span class="exp-date">May – Aug 2024</span>
+              <span class="exp-duration">4 mo</span>
+            </div>
           </div>
-          <div class="tl-card tl-card-meta">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-meta">
-                  <img class="tl-logo" src="meta_logo.svg" alt="Meta" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Software Engineer Intern — AI Infrastructure</h3>
-                  <p class="tl-company tl-company-meta">Meta <span class="tl-location">· Bellevue, WA, USA</span></p>
-                </div>
-              </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">May – Aug 2025</span>
-                <span class="tl-duration">4 mo</span>
-              </div>
-            </div>
-            <ul class="tl-bullets">
-              <li>Used PyTorch to optimize model processing pipelines for Instagram &amp; Ads at scale.</li>
-              <li>Built a multi-stage validation component in the model processing workflow, closing a validation gap that impacted many production models and caused major outages.</li>
-              <li>Extended the project by creating a suite of CLI tools for ad-hoc weight validation of published model snapshots.</li>
-              <li>Implemented distributed chunk processing of weight pruning, decreasing peak memory usage by <strong>14%</strong>.</li>
-            </ul>
-            <div class="tl-tags">
-              <span>PyTorch</span><span>Python</span><span>ML Systems</span><span>Distributed Systems</span><span>CLI Tooling</span>
-            </div>
+          <ul class="exp-bullets">
+            <li>Wrote a research report &amp; presented on applying 1st-order logic to create explainable AI in generative design.</li>
+            <li>Built a pipeline converting natural language → 1st-order logic → generative design models using the Fusion 360 API and a fine-tuned LLM.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Python</span><span>Workflow Automation</span><span>Technical Writing</span><span>LLMs</span><span>Fusion 360</span>
           </div>
         </div>
+        <hr class="exp-divider" />
 
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
+        <div class="exp-row reveal">
+          <div class="exp-header">
+            <div class="exp-left">
+              <div class="exp-logo-wrap exp-logo-careem">
+                <img src="careem_logo.svg" data-base="careem_logo.svg" data-dark="careem_logo_dark.svg" alt="" class="exp-logo" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="exp-role">Data Engineer Intern</h3>
+                <p class="exp-company">Careem <span class="exp-loc">· Dubai, UAE</span></p>
+              </div>
+            </div>
+            <div class="exp-right">
+              <span class="exp-date">Jun – Aug 2023</span>
+              <span class="exp-duration">3 mo</span>
+            </div>
           </div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-veeva">
-                  <img class="tl-logo" src="veeva_logo.svg" alt="Veeva Systems" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Software Engineer Intern</h3>
-                  <p class="tl-company">Veeva Systems <span class="tl-location">· Toronto, ON, Canada</span></p>
-                </div>
-              </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">May 2024 – Apr 2025</span>
-                <span class="tl-duration">1 yr</span>
-              </div>
-            </div>
-            <ul class="tl-bullets">
-              <li>Led development of a Java internal debugging tool allowing secure API calls in customer instances.</li>
-              <li>Added multivalue fields for user info &amp; optimized aggregation calls, reducing user table load times by <strong>~0.2 seconds</strong>.</li>
-              <li>Created new DB tables, service &amp; API for a new revision history feature for medical data processing tasks.</li>
-              <li>Wrote Groovy scripts for Pfizer &amp; Bayer to convert medical data to match regional standards.</li>
-            </ul>
-            <div class="tl-tags">
-              <span>Java</span><span>Groovy</span><span>REST APIs</span><span>SQL</span>
-            </div>
+          <ul class="exp-bullets">
+            <li>Designed a dynamic resource routing model for PrestoSQL queries, boosting query performance by <strong>~10%</strong>.</li>
+            <li>Conducted data visualization &amp; built Grafana performance dashboards for the query engine.</li>
+            <li>Developed features &amp; wrote JUnit/Mockito tests for the migration from PrestoSQL to Trino.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Java</span><span>PrestoSQL</span><span>Trino</span><span>Grafana</span><span>JUnit</span><span>Mockito</span>
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-uoft">
-                  <img class="tl-logo" src="uoft_logo.svg" alt="University of Toronto" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Student Researcher</h3>
-                  <p class="tl-company">University of Toronto <span class="tl-location">· Toronto, ON, Canada</span></p>
-                </div>
-              </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">May – Aug 2024</span>
-                <span class="tl-duration">4 mo</span>
-              </div>
-            </div>
-            <ul class="tl-bullets">
-              <li>Wrote a research report &amp; presented on applying 1st-order logic to create explainable AI in generative design.</li>
-              <li>Built a pipeline converting natural language → 1st-order logic → generative design models using the Fusion 360 API and a fine-tuned LLM.</li>
-            </ul>
-            <div class="tl-tags">
-              <span>Python</span><span>Workflow Automation</span><span>Technical Writing</span><span>LLMs</span><span>Fusion 360</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <div class="tl-dot"></div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <div class="tl-header-left">
-                <div class="tl-logo-wrap tl-logo-careem">
-                  <img class="tl-logo" src="careem_logo.svg" alt="Careem" />
-                </div>
-                <div>
-                  <h3 class="tl-role">Data Engineer Intern</h3>
-                  <p class="tl-company">Careem <span class="tl-location">· Dubai, UAE</span></p>
-                </div>
-              </div>
-              <div class="tl-date-wrap">
-                <span class="tl-date">Jun – Aug 2023</span>
-                <span class="tl-duration">3 mo</span>
-              </div>
-            </div>
-            <ul class="tl-bullets">
-              <li>Designed a dynamic resource routing model for PrestoSQL queries, boosting query performance by <strong>~10%</strong>.</li>
-              <li>Conducted data visualization &amp; built Grafana performance dashboards for the query engine.</li>
-              <li>Developed features &amp; wrote JUnit/Mockito tests for the migration from PrestoSQL to Trino.</li>
-            </ul>
-            <div class="tl-tags">
-              <span>Java</span><span>PrestoSQL</span><span>Trino</span><span>Grafana</span><span>JUnit</span><span>Mockito</span>
-            </div>
-          </div>
-        </div>
+        <hr class="exp-divider" />
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <div class="section-art" aria-hidden="true">
-      <div class="section-orb sorb-e"></div>
-      <div class="section-orb sorb-f"></div>
-    </div>
-    <div class="section-inner">
-      <h2 class="section-title"><span class="num">03.</span> Projects</h2>
-      <div class="projects-grid">
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-grid">
 
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-icon">🐾</span>
-            <div class="project-links">
-              <a href="https://petpal-vercel.vercel.app/" target="_blank" rel="noopener" aria-label="Live site">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
+          <div class="project-card project-featured reveal">
+            <div class="project-num">01</div>
+            <h3 class="project-title">PetPal</h3>
+            <p class="project-desc">Led a team of 4 developers to build a React &amp; Django pet adoption website. Designed the UI &amp; backend services for user profiles, adoption listings, and pet info pages.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>React</span><span>Django</span><span>Python</span>
+              </div>
+              <div class="project-links">
+                <a href="https://petpal-vercel.vercel.app/" target="_blank" rel="noopener" aria-label="Live site" class="project-link">↗</a>
+                <a href="https://github.com/ryanMMM/PetPal" target="_blank" rel="noopener" aria-label="GitHub" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
             </div>
           </div>
-          <h3>PetPal</h3>
-          <p>Led a team of 4 developers to build a React &amp; Django pet adoption website. Designed the UI &amp; backend services for user profiles, adoption listings, and pet info pages.</p>
-          <div class="project-tags">
-            <span>React</span><span>Django</span><span>Python</span>
-            <a href="https://github.com/ryanMMM/PetPal" target="_blank" rel="noopener" class="project-tag-github" aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-icon">🌊</span>
-            <div class="project-links"></div>
-          </div>
-          <h3>DebrisMine</h3>
-          <p>Environment-focused social media app for non-profit Oceanic Impact. Worked with 7 developers to expand the React Native app with groups, article posting, likes &amp; comments. Implemented Django backend MVC and Selenium article web scraping.</p>
-          <div class="project-tags">
-            <span>React Native</span><span>Django</span><span>MVC</span><span>Selenium</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-icon">🏥</span>
-            <div class="project-links">
-              <a href="https://github.com/The-CSC207-Group/Project207" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
+          <div class="project-card reveal">
+            <div class="project-num">02</div>
+            <h3 class="project-title">DebrisMine</h3>
+            <p class="project-desc">Environment-focused social media app for non-profit Oceanic Impact. React Native app with groups, article posting, likes &amp; comments. Django backend MVC &amp; Selenium scraping.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>React Native</span><span>Django</span><span>Selenium</span>
+              </div>
+              <div class="project-links"></div>
             </div>
           </div>
-          <h3>Clinic Management App</h3>
-          <p>Worked on a team of 8 developers to build a Java clinic management application. Spearheaded the development of the database &amp; controllers using MVC architecture.</p>
-          <div class="project-tags">
-            <span>Java</span><span>MVC</span><span>Database Design</span>
+
+          <div class="project-card reveal">
+            <div class="project-num">03</div>
+            <h3 class="project-title">Clinic Management App</h3>
+            <p class="project-desc">Team of 8 developers. Java clinic management application with database &amp; controllers built on MVC architecture.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>Java</span><span>MVC</span><span>SQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/The-CSC207-Group/Project207" target="_blank" rel="noopener" aria-label="GitHub" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="section-art" aria-hidden="true">
-      <div class="section-orb sorb-g"></div>
-    </div>
-    <div class="section-inner contact-inner">
-      <h2 class="section-title"><span class="num">04.</span> Get In Touch</h2>
-      <div class="contact-links">
-        <a href="mailto:rmerheby03@gmail.com" class="btn btn-primary btn-lg">
-          Say Hello
-        </a>
-        <a href="https://www.linkedin.com/in/ryanmerheby/" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
-          LinkedIn
-        </a>
+    <footer>
+      <div class="footer-inner">
+        <span>Ryan Merheby</span>
+        <div class="footer-icons">
+          <a href="mailto:rmerheby03@gmail.com" aria-label="Email" class="footer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ryanmerheby/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/ryanMMM" target="_blank" rel="noopener" aria-label="GitHub" class="footer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <footer>
-    <p>Designed by Ryan Merheby</p>
-    <p class="footer-links">
-      <a href="mailto:ryan.merheby@mail.utoronto.ca">Email</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/ryanmerheby/" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
-  </footer>
   </main>
 
   <script src="script.js"></script>
