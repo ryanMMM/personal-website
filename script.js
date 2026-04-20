@@ -74,6 +74,15 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   });
 });
 
+(function () {
+  const now = new Date();
+  const months = (now.getFullYear() - 2026) * 12 + (now.getMonth() - 3) + 1; // April 2026 = 1 mo
+  if (months >= 1) {
+    const el = document.getElementById('meta-ft-duration');
+    if (el) el.textContent = months < 12 ? `${months} mo` : `${Math.floor(months / 12)} yr${months % 12 ? ' ' + (months % 12) + ' mo' : ''}`;
+  }
+})();
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -90,3 +99,21 @@ const sectionObserver = new IntersectionObserver(
   { rootMargin: '-40% 0px -40% 0px' }
 );
 sections.forEach(s => sectionObserver.observe(s));
+
+
+
+
+// ── Card tilt ───────────────────────────────────────
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform  = `perspective(700px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale3d(1.02,1.02,1.02)`;
+    card.style.transition = 'transform 0.05s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform  = '';
+    card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+  });
+});
