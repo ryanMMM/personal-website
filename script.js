@@ -1,4 +1,3 @@
-// Theme toggle
 const themeToggle = document.getElementById('themeToggle');
 
 function applyTheme(theme) {
@@ -23,7 +22,6 @@ themeToggle.addEventListener('click', () => {
   applyTheme(next);
 });
 
-// Navbar scroll shadow
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);

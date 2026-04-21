@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════════════════════
-   RYAN MERHEBY — EDITORIAL PORTFOLIO
-   ═══════════════════════════════════════════════════════ */
-
-/* ── Variables ─────────────────────────────────────────── */
 :root {
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans:  'DM Sans', system-ui, -apple-system, sans-serif;
@@ -37,7 +32,7 @@
   --border-strong: rgba(240, 236, 228, 0.18);
 }
 
-/* ── Reset ─────────────────────────────────────────────── */
+/* reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -68,14 +63,14 @@ h1, h2, h3 {
 
 strong { font-weight: 500; }
 
-/* ── Layout ────────────────────────────────────────────── */
+/* layout */
 .section-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 40px 2rem;
 }
 
-/* ── Navbar ────────────────────────────────────────────── */
+/* navbar */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -209,7 +204,7 @@ strong { font-weight: 500; }
 }
 .nav-mobile-menu a:hover { color: var(--text); }
 
-/* ── Hero ──────────────────────────────────────────────── */
+/* hero */
 #hero {
   padding: calc(var(--nav-height) + 64px) 0 72px;
   background: var(--bg);
@@ -314,7 +309,7 @@ strong { font-weight: 500; }
   border-color: var(--accent);
 }
 
-/* ── Section Common ────────────────────────────────────── */
+/* section common */
 .section-header {
   display: flex;
   align-items: baseline;
@@ -348,7 +343,7 @@ strong { font-weight: 500; }
 #projects .section-inner { padding-top: 32px; padding-bottom: 32px; }
 #projects .section-header { margin-bottom: 1.25rem; }
 
-/* ── About ─────────────────────────────────────────────── */
+/* about */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 270px;
@@ -417,7 +412,7 @@ strong { font-weight: 500; }
   line-height: 1.4;
 }
 
-/* ── Experience ─────────────────────────────────────────── */
+/* experience */
 .exp-divider { border-top: 1px solid var(--border); }
 
 .exp-row { padding: 2rem 0; }
@@ -543,7 +538,7 @@ strong { font-weight: 500; }
   border-radius: 2px;
 }
 
-/* ── Projects ──────────────────────────────────────────── */
+/* projects */
 .projects-grid { display: flex; flex-direction: column; width: 100%; overflow: hidden; }
 
 .project-card {
@@ -614,7 +609,7 @@ strong { font-weight: 500; }
 }
 .project-link:hover { color: var(--accent); }
 
-/* ── Contact ────────────────────────────────────────────── */
+/* contact */
 .contact-inner {
   max-width: 640px;
   text-align: center;
@@ -673,7 +668,7 @@ strong { font-weight: 500; }
   transform: translateY(-1px);
 }
 
-/* ── Footer ─────────────────────────────────────────────── */
+/* footer */
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -712,7 +707,7 @@ footer a:hover { color: var(--text-muted); }
 }
 .footer-icon:hover { color: var(--text-muted); }
 
-/* ── Scroll Reveal ──────────────────────────────────────── */
+/* scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -723,7 +718,7 @@ footer a:hover { color: var(--text-muted); }
   transform: none;
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* responsive */
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
